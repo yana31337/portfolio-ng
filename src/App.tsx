@@ -3,10 +3,6 @@ import './App.css';
 import logo from './assets/png/ng-logo.png';
 import search from './assets/svg/search.svg';
 import doubleDown from './assets/png/double-down.png';
-import cat from './assets/png/cat.png';
-import thanksgiving from './assets/png/thanksgiving.png';
-import mount from './assets/png/mount.png';
-import menu from './assets/svg/menu.svg';
 import national from './assets/png/national.jpg';
 import block from './assets/png/block.jpg';
 import movie1 from './assets/png/movie_1.jpg';
@@ -21,6 +17,12 @@ import forest from './assets/png/forest.jpg';
 import facebook from './assets/svg/facebook.svg';
 import instagram from './assets/svg/instagram.svg';
 import twitter from './assets/svg/twitter.svg';
+import SmallCard from './components/SmallCard';
+import MediumCard from './components/MediumCard';
+import LadgeCard from './components/LadgeCard';
+import { sCards } from './data/sCards';
+import { lCard } from './data/lCard';
+import { mCard } from './data/mCard';
 
 
 
@@ -57,7 +59,7 @@ function App() {
 
         <div className='grid grid-cols-12 gap-x-10 col-start-auto max-w-5xl mx-auto my-0 text-white pb-14'>
 
-          <div className='col-span-12 text-center pt-16 pb-9 min-h-min'>
+          <div className='col-span-12 text-center pt-16 pb-9 '>
             <h2 className='text-5xl font-semibold uppercase tracking-wider'> Latest Stories</h2>
             <div className='text-lg font-normal leading-6 mt-3.5 mb-7 mx-0' >
               <span className='tracking-wider'>
@@ -74,124 +76,25 @@ function App() {
               <div className='w-1 mr-4 mb-8 h-8 bg-yellow-400'> </div>
               <h2 className=' uppercase text-3xl mb-8 '>Today's Picks</h2>
             </div>
-            <div >
-              <div className='flex flex-row mb-5'>
-                <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                <div>
-                  <a href="#" className=''>
-                    <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                    <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                  </a>
-                </div>
-              </div>
-              <div className='flex flex-row mb-5' >
-                <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                <div>
-                  <a href="#" className=''>
-                    <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                    <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                  </a>
-                </div>
-              </div>
-              <div className='flex flex-row mb-5'>
-                <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                <div>
-                  <a href="#" className=''>
-                    <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                    <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                  </a>
-                </div>
-              </div>
-              <div className='flex flex-row mb-5'>
-                <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                <div>
-                  <a href="#" className=''>
-                    <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                    <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                  </a>
-                </div>
-              </div>
-              <div className='flex flex-row mb-5'>
-                <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                <div>
-                  <a href="#" className=''>
-                    <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                    <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                  </a>
-                </div>
-              </div>
-              <div className='flex flex-row mb-5'>
-                <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                <div>
-                  <a href="#" className=''>
-                    <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                    <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                  </a>
-                </div>
-              </div>
 
+            <div >
+              {sCards.map(card => <SmallCard card={card} />)}
             </div>
+
             <div>
               <a href="#" className='uppercase text-sm font-medium tracking-wide underline decoration-yellow-500 decoration-2 underline-offset-4 hover:no-underline hover:bg-yellow-400 hover:text-black'>See More</a>
             </div>
+
           </div>
 
           <div className='col-span-8'>
 
-            <div className='w-full h-auto relative'>
-              <div className='absolute  flex flex-col w-full inset-x-0 bottom-0 ml-3'>
-                <div className=''>
-                  <a href="#" className='mr-5 uppercase'> Travel</a>
-                  <a href="#" className=' '>2022 in Review</a>
-                </div>
+            <LadgeCard card={lCard[0]} />
 
-                <a href="#" className='text-4xl font-normal font-sans '>The 10 best places, according to Nat Geo</a>
-                <div className=' flex flex-row mb-2'>
-                  <img src={menu} alt="" className='w-4 h-4 aling-center mt-1 ' />
-                  <a href="" className='uppercase ml-2'>
+            <div className='flex flex-row justify-between h-1/2 mt-10'>
 
-                    Read</a>
-                </div>
-              </div>
-              <img src={thanksgiving} alt="" className=' ' />
-            </div>
-
-            <div className='flex flex-row h-auto mt-10'>
-
-              <div className='w-1/2 mr-5 '>
-                <div className='w-full h-auto relative'>
-                  <div className='absolute  flex flex-col w-full inset-x-0 bottom-0 ml-3'>
-                    <div className=''>
-                      <a href="#" className='mr-5 uppercase'> Travel</a>
-                    </div>
-
-                    <a href="#" className='text-2xl font-normal font-sans '>The 10 best places</a>
-                    <div className=' flex flex-row mb-2'>
-                      <img src={menu} alt="" className='w-4 h-4 aling-center mt-1 ' />
-                      <a href="" className='uppercase ml-2 text-sm'>Read</a>
-                    </div>
-                  </div>
-                  <img src={mount} alt="" className='w-full h-80' />
-                </div>
-
-              </div>
-
-              <div className='w-1/2'>
-                <div className='w-full h-auto relative'>
-                  <div className='absolute  flex flex-col w-full inset-x-0 bottom-0 ml-3'>
-                    <div className=''>
-                      <a href="#" className='mr-5 uppercase'> Travel</a>
-                    </div>
-
-                    <a href="#" className='text-2xl font-normal font-sans '>The 10 best places</a>
-                    <div className=' flex flex-row mb-2'>
-                      <img src={menu} alt="" className='w-4 h-4 aling-center mt-1 ' />
-                      <a href="" className='uppercase ml-2 text-sm'>Read</a>
-                    </div>
-                  </div>
-                  <img src={mount} alt="" className='w-full h-80' />
-                </div>
-              </div>
+              <MediumCard card={mCard[0]}/>
+              <MediumCard card={mCard[1]}/>
 
             </div>
 
@@ -316,61 +219,11 @@ function App() {
 
             <div className='col-span-8'>
 
-              <div className='w-full h-auto relative'>
-                <div className='absolute  flex flex-col w-full inset-x-0 bottom-0 ml-3'>
-                  <div className=''>
-                    <a href="#" className='mr-5 uppercase'> Travel</a>
-                    <a href="#" className=' '>2022 in Review</a>
-                  </div>
+              <LadgeCard card={lCard[1]} />
 
-                  <a href="#" className='text-4xl font-normal font-sans '>The 10 best places, according to Nat Geo</a>
-                  <div className=' flex flex-row mb-2'>
-                    <img src={menu} alt="" className='w-4 h-4 aling-center mt-1 ' />
-                    <a href="" className='uppercase ml-2'>
-
-                      Read</a>
-                  </div>
-                </div>
-                <img src={thanksgiving} alt="" className='' />
-              </div>
-
-              <div className='flex flex-row h-auto mt-10'>
-
-                <div className='w-1/2 mr-5 '>
-                  <div className='w-full h-auto relative'>
-                    <div className='absolute  flex flex-col w-full inset-x-0 bottom-0 ml-3'>
-                      <div className=''>
-                        <a href="#" className='mr-5 uppercase'> Travel</a>
-                      </div>
-
-                      <a href="#" className='text-2xl font-normal font-sans '>The 10 best places</a>
-                      <div className=' flex flex-row mb-2'>
-                        <img src={menu} alt="" className='w-4 h-4 aling-center mt-1 ' />
-                        <a href="" className='uppercase ml-2 text-sm'>Read</a>
-                      </div>
-                    </div>
-                    <img src={mount} alt="" className='w-full h-80' />
-                  </div>
-
-                </div>
-
-                <div className='w-1/2'>
-                  <div className='w-full h-auto relative'>
-                    <div className='absolute  flex flex-col w-full inset-x-0 bottom-0 ml-3'>
-                      <div className=''>
-                        <a href="#" className='mr-5 uppercase'> Travel</a>
-                      </div>
-
-                      <a href="#" className='text-2xl font-normal font-sans '>The 10 best places</a>
-                      <div className=' flex flex-row mb-2'>
-                        <img src={menu} alt="" className='w-4 h-4 aling-center mt-1 ' />
-                        <a href="" className='uppercase ml-2 text-sm'>Read</a>
-                      </div>
-                    </div>
-                    <img src={mount} alt="" className='w-full h-80' />
-                  </div>
-                </div>
-
+              <div className='flex flex-row  justify-between h-auto  mt-10'>
+                <MediumCard card={mCard[2]}/>
+                <MediumCard card={mCard[3]}/>
               </div>
 
             </div>
@@ -381,63 +234,11 @@ function App() {
                 <div className='w-1 mr-4 mb-4 h-8 bg-yellow-400'> </div>
                 <h2 className=' uppercase text-3xl mb-4 '>Today's Picks</h2>
               </div>
-              <div className='' >
-                <div className='flex flex-row mb-5 '>
-                  <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                  <div>
-                    <a href="#" className=''>
-                      <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                      <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                    </a>
-                  </div>
-                </div>
-                <div className='flex flex-row mb-5' >
-                  <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                  <div>
-                    <a href="#" className=''>
-                      <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                      <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                    </a>
-                  </div>
-                </div>
-                <div className='flex flex-row mb-5'>
-                  <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                  <div>
-                    <a href="#" className=''>
-                      <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                      <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                    </a>
-                  </div>
-                </div>
-                <div className='flex flex-row mb-5'>
-                  <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                  <div>
-                    <a href="#" className=''>
-                      <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                      <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                    </a>
-                  </div>
-                </div>
-                <div className='flex flex-row mb-5'>
-                  <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                  <div>
-                    <a href="#" className=''>
-                      <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                      <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                    </a>
-                  </div>
-                </div>
-                <div className='flex flex-row mb-5'>
-                  <img src={cat} alt="" className='h-24 w-24 mr-5' />
-                  <div>
-                    <a href="#" className=''>
-                      <div className='tracking-wider text-sm pb-1'>History & Culture</div>
-                      <div className=' text-base tracking-wide hover:underline'>The legend of the ‘demon cat’ that roams the U.S. Capitol</div>
-                    </a>
-                  </div>
-                </div>
 
+              <div >
+                {sCards.map(card => <SmallCard card={card} />)}
               </div>
+
               <div className=''>
                 <a href="#" className='uppercase text-sm font-medium tracking-wide underline decoration-yellow-500 decoration-2 underline-offset-4 hover:no-underline hover:bg-yellow-400 hover:text-black'>See More</a>
               </div>
@@ -568,9 +369,9 @@ function App() {
 
           <div>
             <div className='flex flex-row w-2/6 justify-between '>
-              <a href="#"><img src={facebook} alt="" className='w-6 h-6'/></a>
-              <a href="#"><img src={twitter} alt="" className='w-6 h-6'/></a>
-              <a href="#"><img src={instagram} alt="" className='w-6 h-6'/></a>
+              <a href="#"><img src={facebook} alt="" className='w-6 h-6' /></a>
+              <a href="#"><img src={twitter} alt="" className='w-6 h-6' /></a>
+              <a href="#"><img src={instagram} alt="" className='w-6 h-6' /></a>
             </div>
             <div>
 
@@ -578,9 +379,9 @@ function App() {
           </div>
 
 
-      
+
         </div>
-        <hr className='border-gray-500'/>
+        <hr className='border-gray-500' />
         <div className='bg-black h-10'>
 
         </div>
