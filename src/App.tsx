@@ -245,8 +245,10 @@ function App() {
             </div>
 
           </div>
-          <img src={national} alt="" className='  w-full ' />
-          <div className='bg-black h-64'></div>
+          <img 
+          src={national}
+           alt="" className='w-full' />
+          <div className='bg-black h-40 '></div>
 
         </div>
 
