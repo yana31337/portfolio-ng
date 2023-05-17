@@ -20,14 +20,15 @@ import twitter from './assets/svg/twitter.svg';
 import SmallCard from './components/SmallCard';
 import MediumCard from './components/MediumCard';
 import LadgeCard from './components/LadgeCard';
-import { sCards } from './data/sCards';
-import { lCard } from './data/lCard';
-import { mCard } from './data/mCard';
+import { useSelector } from 'react-redux';
+import { ICard } from './models';
 
+function App(props: any) {
 
+  let largeCard = useSelector((state: any) => state.lCard)
+  let mediumCard = useSelector((state: any) => state.mCard)
+  let smallCard = useSelector((state: any) => state.sCard)
 
-
-function App() {
   return (
     <div className="App ">
 
@@ -78,7 +79,7 @@ function App() {
             </div>
 
             <div >
-              {sCards.map(card => <SmallCard card={card} />)}
+              {smallCard.map((card: ICard) => <SmallCard card={card} />)}
             </div>
 
             <div>
@@ -89,12 +90,12 @@ function App() {
 
           <div className='col-span-8'>
 
-            <LadgeCard card={lCard[0]} />
+            <LadgeCard card={largeCard[0]} />
 
             <div className='flex flex-row justify-between h-1/2 mt-10'>
 
-              <MediumCard card={mCard[0]}/>
-              <MediumCard card={mCard[1]}/>
+              <MediumCard card={mediumCard[0]} />
+              <MediumCard card={mediumCard[1]} />
 
             </div>
 
@@ -219,11 +220,11 @@ function App() {
 
             <div className='col-span-8'>
 
-              <LadgeCard card={lCard[1]} />
+              <LadgeCard card={largeCard[1]} />
 
               <div className='flex flex-row  justify-between h-auto  mt-10'>
-                <MediumCard card={mCard[2]}/>
-                <MediumCard card={mCard[3]}/>
+                <MediumCard card={mediumCard[2]} />
+                <MediumCard card={mediumCard[3]} />
               </div>
 
             </div>
@@ -236,7 +237,7 @@ function App() {
               </div>
 
               <div >
-                {sCards.map(card => <SmallCard card={card} />)}
+                {smallCard.map((card: ICard) => <SmallCard card={card} />)}
               </div>
 
               <div className=''>
@@ -245,9 +246,9 @@ function App() {
             </div>
 
           </div>
-          <img 
-          src={national}
-           alt="" className='w-full' />
+          <img
+            src={national}
+            alt="" className='w-full' />
           <div className='bg-black h-40 '></div>
 
         </div>

@@ -1,7 +1,6 @@
-import { ICard } from "../models";
+import { ICard } from '../models';
 
-
-export const sCards: ICard []= [
+let initialState: ICard[] = [
     {
         id: 1,
         title: 'History & Culture',
@@ -32,5 +31,13 @@ export const sCards: ICard []= [
         description: 'North Carolina experiences await beyond Raleigh',
         image: 'https://i.natgeofe.com/n/49281e7b-2820-45f5-9142-a30a6741d960/MM9809_211022_01752_square.jpg?w=390&h=390'
     },
-
 ]
+
+const sCardReducer = (state = initialState, action: any) => {
+    switch (action.type) {
+        default:
+            return state;
+    }
+}
+
+export default sCardReducer;
